@@ -44,7 +44,7 @@ fn main() {
     localhost.set_read_timeout(Some(timeout)).unwrap();
     localhost.set_nonblocking(false).unwrap();
 
-    let _amt = localhost.send_to(&request_as_bytes,dns_server).unwrap();
+    localhost.send_to(&request_as_bytes,dns_server).unwrap();
 
     let (_amt,_remote) = localhost.recv_from(&mut response_as_bytes).expect("time out");
 
